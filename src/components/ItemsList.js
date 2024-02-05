@@ -34,8 +34,8 @@ export default function ItemsList() {
           }
         }
       }
-      projects: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "//projects/[^/]+$/" } }
+      resources: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "//resources/[^/]+$/" } }
         sort: {
           fields: [frontmatter___added, frontmatter___title]
           order: DESC
@@ -149,7 +149,7 @@ export default function ItemsList() {
     </li>
   ))
 
-  const projects = data.projects.edges.map(item => (
+  const resources = data.resources.edges.map(item => (
     <li
       key={item.node.frontmatter.title}
       className={item.node.frontmatter.nameOfClass}
@@ -170,7 +170,7 @@ export default function ItemsList() {
           width: "70%",
         }}
       >
-        {`lrwxr-xr-x 1 kielx admin ${item.node.frontmatter.added} ${item.node.frontmatter.slug} -> `}
+        {`lrwxr-xr-x 1 chacker admin ${item.node.frontmatter.added} ${item.node.frontmatter.slug} -> `}
         <a href={item.node.frontmatter.popupGithubLink}>
           {item.node.frontmatter.popupGithubLink}
         </a>
@@ -178,7 +178,7 @@ export default function ItemsList() {
     </li>
   ))
 
-  const projectsMobile = data.projects.edges.map(item => (
+  const resourcesMobile = data.resources.edges.map(item => (
     <li
       key={item.node.frontmatter.title}
       className={item.node.frontmatter.nameOfClass}
@@ -234,8 +234,8 @@ export default function ItemsList() {
   const mappedItems = () => {
     return (
       <>
-        <li>→ Tracks:</li> {track} <li>→ Projects:</li>
-        {projects}
+        <li>→ Tracks:</li> {track} <li>→ Resources:</li>
+        {resources}
       </>
     )
   }
@@ -245,19 +245,9 @@ export default function ItemsList() {
       <>
         <li>→ Tracks:</li> {trackMobile}{" "}
         <li className="trackItem">
-          <Link
-            className="popupWindowLinkButton"
-            style={{ cursor: "pointer" }}
-            to="/contact"
-          >
-            <span role="img" aria-label="e-mail">
-              📧
-            </span>{" "}
-            /Contact
-          </Link>
         </li>{" "}
-        <li>→ Projects:</li>
-        {projectsMobile}
+        <li>→ Resources:</li>
+        {resourcesMobile}
       </>
     )
   }

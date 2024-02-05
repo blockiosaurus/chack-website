@@ -58,7 +58,7 @@ const Footer = () => {
         )}
         {" | "}
         <a
-          href="https://www.github.com/Kielx"
+          href="https://github.com/metaplex-foundation"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -73,7 +73,7 @@ const Footer = () => {
           paddingBottom: "10px",
         }}
       >
-        © 2021-{new Date().getFullYear()} Krzysztof Pantak {" | "} Source code
+        Forked from <a href="https://github.com/Kielx/terminal-portfolio">terminal-portfolio</a> by Krzysztof Pantak {" | "} Source code
         distributed under MIT License
       </span>
     </footer>
