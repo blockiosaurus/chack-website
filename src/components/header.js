@@ -17,7 +17,7 @@ const Header = ({ siteTitle }) => {
         <h1>{">"}</h1>
         <h1>
           {isLoaded ? (
-            "Krzysztof Pantak"
+            "Metaplex cHack"
           ) : (
             <Typewriter
               style={{ marginTop: 0, paddingTop: 0 }}
@@ -26,13 +26,25 @@ const Header = ({ siteTitle }) => {
               }}
               onInit={typewriter => {
                 typewriter
-                  .typeString("Software Developer")
+                  .typeString("Dev Tools")
                   .pauseFor(2500)
                   .deleteAll()
-                  .typeString("Problem solver")
+                  .typeString("Social")
                   .pauseFor(2500)
                   .deleteAll()
-                  .typeString("Krzysztof Pantak")
+                  .typeString("Mobile")
+                  .pauseFor(2500)
+                  .deleteAll()
+                  .typeString("Gaming")
+                  .pauseFor(2500)
+                  .deleteAll()
+                  .typeString("RWAs")
+                  .pauseFor(2500)
+                  .deleteAll()
+                  .typeString("DePIN")
+                  .pauseFor(2500)
+                  .deleteAll()
+                  .typeString("Compression")
                   .callFunction(() => {
                     setIsLoaded(true)
                   })

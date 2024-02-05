@@ -1,13 +1,24 @@
 :root {
-  --primaryText: #ffc600;
+  --primaryText: #00FF2B;
   --secondaryText: #ccc;
   --linkText: #047be3;
-  --bg: #1b2d3a;
-  --windowBg: #193549;
-  --focusBg: hsl(205, 51%, 16%);
+  // --bg: #1b2d3a;
+  // --windowBg: #193549;
+  // --focusBg: hsl(205, 51%, 16%);
   --borderColor: black;
-  --windowBackgroundImageColor: rgba(25,45,58,0.95);  
+  // --windowBackgroundImageColor: rgba(25,45,58,0.95);  
   --blurRadius: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  /* screen glow */
+  background-image: radial-gradient(
+    #001A00, black 120%
+  );
+  width: 100%;
 }
 
 /* .light {

@@ -61,8 +61,8 @@ export default function ItemsList() {
           }
         }
       }
-      info: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "//info/[^/]+$/" } }
+      tracks: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "//tracks/[^/]+$/" } }
       ) {
         edges {
           node {
@@ -125,8 +125,8 @@ export default function ItemsList() {
     )
   }
 
-  const info = data.info.edges.map(item => (
-    <li key={item.node.frontmatter.title} className="infoItem">
+  const track = data.tracks.edges.map(item => (
+    <li key={item.node.frontmatter.title} className="trackItem">
       <button
         className="popupWindowLinkButton"
         style={{ cursor: "pointer" }}
@@ -137,8 +137,8 @@ export default function ItemsList() {
     </li>
   ))
 
-  const infoMobile = data.info.edges.map(item => (
-    <li key={item.node.frontmatter.title} className="infoItem">
+  const trackMobile = data.tracks.edges.map(item => (
+    <li key={item.node.frontmatter.title} className="trackItem">
       <Link
         className="popupWindowLinkButton"
         style={{ cursor: "pointer" }}
@@ -234,8 +234,8 @@ export default function ItemsList() {
   const mappedItems = () => {
     return (
       <>
-        <li>→ Info:</li> {info} {contactItem} <li>→ Projects:</li>
-        {projects} <li className="miniProject">→ Mini-Projects:</li>
+        <li>→ Tracks:</li> {track} <li>→ Projects:</li>
+        {projects}
       </>
     )
   }
@@ -243,8 +243,8 @@ export default function ItemsList() {
   const mappedItemsMobile = () => {
     return (
       <>
-        <li>→ Info:</li> {infoMobile}{" "}
-        <li className="infoItem">
+        <li>→ Tracks:</li> {trackMobile}{" "}
+        <li className="trackItem">
           <Link
             className="popupWindowLinkButton"
             style={{ cursor: "pointer" }}
@@ -257,7 +257,7 @@ export default function ItemsList() {
           </Link>
         </li>{" "}
         <li>→ Projects:</li>
-        {projectsMobile} <li className="miniProject">→ Mini-Projects:</li>
+        {projectsMobile}
       </>
     )
   }

@@ -18,9 +18,8 @@ export default function PopupTerminalWindow({
   let link = ""
   techIcons = techIcons?.map(icon => (
     <li className="techItem tooltip" key={icon}>
-      <span className="tooltiptext">{`${
-        icon.charAt(0).toUpperCase() + icon.slice(1)
-      }`}</span>
+      <span className="tooltiptext">{`${icon.charAt(0).toUpperCase() + icon.slice(1)
+        }`}</span>
       <img
         className="svgIcon"
         src={`https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/${icon}.svg`}
@@ -52,22 +51,20 @@ export default function PopupTerminalWindow({
             {(link = popupLiveLink || popupGithubLink) ? ( // eslint-disable-line no-cond-assign
               <a href={link} target="_blank" rel="noopener noreferrer">
                 <img
-                  src={`${
-                    /^https/.test(popupImageSrc)
+                  src={`${/^https/.test(popupImageSrc)
                       ? popupImageSrc
                       : "/" + popupImageSrc
-                  }`}
+                    }`}
                   className="popupTerminaWindowImage"
                   alt={popupImageAlt}
                 ></img>
               </a>
             ) : (
               <img
-                src={`${
-                  /^https/.test(popupImageSrc)
+                src={`${/^https/.test(popupImageSrc)
                     ? popupImageSrc
                     : "/" + popupImageSrc
-                }`}
+                  }`}
                 className="popupTerminaWindowImage"
                 alt={popupImageAlt}
               ></img>
@@ -133,8 +130,8 @@ export default function PopupTerminalWindow({
             <>
               <div className="break"></div>
               <div className="popupTerminalWindowFooter">
-                <h4>Tech used:</h4>
-                <ul className="techItemsList">{techIcons}</ul>
+                {/* <h4>Tech used:</h4> */}
+                {/* <ul className="techItemsList">{techIcons}</ul> */}
               </div>
             </>
           ) : (

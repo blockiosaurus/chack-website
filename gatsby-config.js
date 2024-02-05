@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Krzysztof Pantak Portfolio`,
-    titleTemplate: `%s | Krzysztof Pantak Portfolio`,
+    title: `cHack Website`,
+    titleTemplate: `%s`,
     description: `Terminal -command-line themed portfolio featuring projects ranging from robust Gatsby PWA's, React APPs and FullStack Web APPs utilizing cloud platforms to simple HTML, CSS and JavaScript sites.`,
     author: `@KrzysztofPantak`,
     url: "https://pantak.net",
@@ -40,7 +40,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,
-        path: `${__dirname}/src/markdown-pages/info`,
+        path: `${__dirname}/src/markdown-pages/tracks`,
       },
     },
     {
