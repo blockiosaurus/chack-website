@@ -51,12 +51,6 @@ const Footer = () => {
     >
       <div style={{ margin: "auto" }}>
         <Link to="/">Home</Link> {" | "}
-        {checkScreenWidthMobile() ? (
-          <Link to="/contact">Contact</Link>
-        ) : (
-          desktopButton
-        )}
-        {" | "}
         <a
           href="https://github.com/metaplex-foundation"
           target="_blank"
