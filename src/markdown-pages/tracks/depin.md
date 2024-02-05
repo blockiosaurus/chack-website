@@ -1,7 +1,7 @@
 ---
 slug: "/depin"
 video: "false"
-listName: "👨‍💻 /DePIN"
+listName: "🌐 /DePIN"
 title: "DePIN"
 popupImageSrc: "depin.png"
 popupImageAlt: ""

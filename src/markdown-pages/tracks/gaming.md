@@ -1,7 +1,7 @@
 ---
 slug: "/gaming"
 video: "false"
-listName: "👨‍💻 /Gaming"
+listName: "🎮 /Gaming"
 title: "Gaming"
 popupImageSrc: "gaming.png"
 popupImageAlt: ""

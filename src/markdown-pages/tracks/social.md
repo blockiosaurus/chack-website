@@ -1,7 +1,7 @@
 ---
 slug: "/social"
 video: "false"
-listName: "👨‍💻 /Social"
+listName: "👥 /Social"
 title: "Social"
 popupImageSrc: "social.png"
 popupImageAlt: ""

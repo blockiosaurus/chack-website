@@ -1,7 +1,7 @@
 ---
 slug: "/devtools"
 video: "false"
-listName: "👨‍💻 /DevTools"
+listName: "🛠️ /DevTools"
 title: "Dev Tools"
 popupImageSrc: "devtools.png"
 popupImageAlt: ""

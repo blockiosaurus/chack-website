@@ -1,7 +1,7 @@
 ---
 slug: "/mobile"
 video: "false"
-listName: "👨‍💻 /Mobile"
+listName: "📱 /Mobile"
 title: "Mobile"
 popupImageSrc: "mobile.png"
 popupImageAlt: ""

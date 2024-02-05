@@ -1,7 +1,7 @@
 ---
 slug: "/rwas"
 video: "false"
-listName: "👨‍💻 /RWAs"
+listName: "🏘️ /RWAs"
 title: "RWAs"
 popupImageSrc: "rwas.png"
 popupImageAlt: ""
