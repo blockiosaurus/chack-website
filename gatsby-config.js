@@ -6,11 +6,8 @@ module.exports = {
   siteMetadata: {
     title: `cHack Website`,
     titleTemplate: `%s`,
-    description: `Terminal -command-line themed portfolio featuring projects ranging from robust Gatsby PWA's, React APPs and FullStack Web APPs utilizing cloud platforms to simple HTML, CSS and JavaScript sites.`,
-    author: `@KrzysztofPantak`,
-    url: "https://pantak.net",
-    image: "/PortfolioSS-sm.png", // Path to your image you placed in the 'static' folder
-    twitterUsername: "@KrzysztofPantak",
+    description: `The official website for Metaplex cHack.`,
+    author: `@Metaplex`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
