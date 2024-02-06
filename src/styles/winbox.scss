@@ -69,7 +69,7 @@
   bottom: 0px;
   left: 0px;
   background-color: var(--windowBackgroundImageColor);
-  backdrop-filter: blur(var(--blurRadius));
+  backdrop-filter: brightness(10%) blur(var(--blurRadius));
 }
 
 @media only screen and (max-width: 600px) {
