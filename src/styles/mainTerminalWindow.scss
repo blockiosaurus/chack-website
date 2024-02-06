@@ -29,7 +29,7 @@
   width: 95%;
   margin: auto;
   justify-content: flex-start;
-  min-height: 60vh;
+  min-height: 10vh;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   padding-bottom: 3vh;
   border-radius: var(--radius);
@@ -79,7 +79,7 @@
   width: 95%;
   margin: auto;
   justify-content: flex-start;
-  min-height: 30vh;
+  min-height: 10vh;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   padding-bottom: 3vh;
   border-radius: var(--radius);
@@ -101,8 +101,6 @@
   }
   
 }
-
-
 
 .mappedItemsList {
   margin-left: 15px;

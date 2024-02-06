@@ -15,7 +15,13 @@ const IndexPage = () => (
         <CatDisplay text="~ $cat README" delay="natural"></CatDisplay>
       </div>
       <div className="container">
-        <LsDisplay showTracks={true} showResources={true} showJudges={true} text="~ $ls -al ./Overview" delay="natural"></LsDisplay>
+        <LsDisplay showTracks={true} text="~ $ls -al ./Tracks" delay="natural"></LsDisplay>
+      </div>
+      <div className="container">
+        <LsDisplay showResources={true} text="~ $ls -al ./Resources" delay="natural"></LsDisplay>
+      </div>
+      <div className="container">
+        <LsDisplay showJudges={true} text="~ $ls -al ./Judges" delay="natural"></LsDisplay>
       </div>
       <div className="container">
         <LsDisplay showFAQ={true} text="~ $cat ./FAQ.txt" delay="natural"></LsDisplay>
