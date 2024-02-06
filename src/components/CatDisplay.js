@@ -4,12 +4,12 @@ import "../styles/winbox.scss"
 import "../styles/mainTerminalWindow.scss"
 import DarkModeToggle from "./DarkModeToggle"
 
-const LsDisplay = ({ text, showTracks, showResources, showJudges, showFAQ }) => {
+const CatDisplay = ({ text }) => {
   const isBrowser = typeof window !== "undefined"
 
   return (
-    <div className="LsDisplayWindow">
-      <div className="LsDisplayTaskbar">
+    <div className="CatDisplayWindow">
+      <div className="CatDisplayTaskbar">
         <span>CMD</span>
         <div style={{ position: "absolute", right: "10px", bottom: "-2px" }}>
           <DarkModeToggle />
@@ -17,18 +17,13 @@ const LsDisplay = ({ text, showTracks, showResources, showJudges, showFAQ }) => 
       </div>
       <h2>
         {text}
-        {isBrowser && window.innerWidth > 1024 ? "" : ""}
+        {isBrowser && window.innerWidth > 1024 ? "a" : ""}
         <div className="break"></div>
       </h2>
-      {isBrowser ?
-        <ItemsList
-          showTracks={showTracks}
-          showResources={showResources}
-          showJudges={showJudges}
-          showFAQ={showFAQ}
-        /> : ""}
+      <div>{"February 1st - 29th"}</div>
+      <div>{"A compression focused hackathon for developers building the future of Solana NFTs and NFT tooling. "}</div>
     </div>
   )
 }
 
-export default LsDisplay
+export default CatDisplay

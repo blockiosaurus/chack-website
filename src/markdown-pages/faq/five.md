@@ -1,0 +1,13 @@
+---
+slug: "resources/two"
+nameOfClass: "faq-items"
+title: "Where should I submit my project and when are submissions due?"
+added: "2023-07-14"
+listName: "Where should I submit my project and when are submissions due?"
+video: "false"
+popupImageSrc: ""
+popupImageAlt: ""
+techIcons: []
+---
+
+Submissions are due by 8:00am UTC on February 29th, 2024. The project submission portal will go live five days before the end of cHack.

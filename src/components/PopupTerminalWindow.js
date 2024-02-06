@@ -52,8 +52,8 @@ export default function PopupTerminalWindow({
               <a href={link} target="_blank" rel="noopener noreferrer">
                 <img
                   src={`${/^https/.test(popupImageSrc)
-                      ? popupImageSrc
-                      : "/" + popupImageSrc
+                    ? popupImageSrc
+                    : "/" + popupImageSrc
                     }`}
                   className="popupTerminaWindowImage"
                   alt={popupImageAlt}
@@ -62,8 +62,8 @@ export default function PopupTerminalWindow({
             ) : (
               <img
                 src={`${/^https/.test(popupImageSrc)
-                    ? popupImageSrc
-                    : "/" + popupImageSrc
+                  ? popupImageSrc
+                  : "/" + popupImageSrc
                   }`}
                 className="popupTerminaWindowImage"
                 alt={popupImageAlt}

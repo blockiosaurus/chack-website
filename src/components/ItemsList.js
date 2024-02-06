@@ -7,7 +7,7 @@ import "winbox/dist/css/winbox.min.css"
 import Konami from "react-konami-code"
 import PopupTerminalWindow from "../components/PopupTerminalWindow"
 
-export default function ItemsList() {
+export default function ItemsList({ showTracks, showResources, showJudges, showFAQ }) {
   const data = useStaticQuery(graphql`
     query {
       all: allMarkdownRemark(
@@ -129,6 +129,29 @@ export default function ItemsList() {
           }
         }
       }
+      faq: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "//faq/[^/]+$/" } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              listName
+              nameOfClass
+              popupGithubLink
+              popupImageAlt
+              popupImageSrc
+              popupLiveLink
+              techIcons
+              title
+              slug
+              video
+              added
+            }
+            html
+            fileAbsolutePath
+          }
+        }
+      }
     }
   `)
   const checkScreenWidth = () => {
@@ -170,117 +193,127 @@ export default function ItemsList() {
     )
   }
 
-  const track = data.tracks.edges.map(item => (
-    <li key={item.node.frontmatter.title} className="trackItem">
-      <button
-        className="popupWindowLinkButton"
-        style={{ cursor: "pointer" }}
-        onClick={() => createWinboxInstance(item)}
-      >
-        {item.node.frontmatter.listName}
-      </button>
-    </li>
-  ))
+  let track, trackMobile;
+  if (showTracks) {
+    track = data.tracks.edges.map(item => (
+      <li key={item.node.frontmatter.title} className="trackItem">
+        <button
+          className="popupWindowLinkButton"
+          style={{ cursor: "pointer" }}
+          onClick={() => createWinboxInstance(item)}
+        >
+          {item.node.frontmatter.listName}
+        </button>
+      </li>
+    ))
 
-  const trackMobile = data.tracks.edges.map(item => (
-    <li key={item.node.frontmatter.title} className="trackItem">
-      <Link
-        className="popupWindowLinkButton"
-        style={{ cursor: "pointer" }}
-        to={item.node.frontmatter.slug}
-      >
-        {item.node.frontmatter.listName}
-      </Link>
-    </li>
-  ))
+    trackMobile = data.tracks.edges.map(item => (
+      <li key={item.node.frontmatter.title} className="trackItem">
+        <Link
+          className="popupWindowLinkButton"
+          style={{ cursor: "pointer" }}
+          to={item.node.frontmatter.slug}
+        >
+          {item.node.frontmatter.listName}
+        </Link>
+      </li>
+    ))
+  }
 
-  const resources = data.resources.edges.map(item => (
-    <li
-      key={item.node.frontmatter.title}
-      className={item.node.frontmatter.nameOfClass}
-      style={{ display: "flex", alignItems: "center", width: "100%" }}
-    >
-      <button
-        className="popupWindowLinkButton"
-        style={{ cursor: "pointer", width: "30%" }}
-        onClick={() => createWinboxInstance(item)}
+  let resources, resourcesMobile;
+  if (showResources) {
+    resources = data.resources.edges.map(item => (
+      <li
+        key={item.node.frontmatter.title}
+        className={item.node.frontmatter.nameOfClass}
+        style={{ display: "flex", alignItems: "center", width: "100%" }}
       >
-        {item.node.frontmatter.listName}
-      </button>
-      <span
-        style={{
-          fontSize: "x-small",
-          paddingLeft: "0.5rem",
-          textJustify: "right",
-          width: "70%",
-        }}
-      >
-        {`lrwxr-xr-x 1 chacker admin ${item.node.frontmatter.added} ${item.node.frontmatter.slug} -> `}
-        <a href={item.node.frontmatter.popupGithubLink}>
-          {item.node.frontmatter.popupGithubLink}
-        </a>
-      </span>
-    </li>
-  ))
+        <button
+          className="popupWindowLinkButton"
+          style={{ cursor: "pointer", width: "30%" }}
+          // onClick={() => createWinboxInstance(item)}
+          onClick={() => window.open(item.node.frontmatter.popupGithubLink)}
+        >
+          {item.node.frontmatter.listName}
+        </button>
+        <span
+          style={{
+            fontSize: "x-small",
+            paddingLeft: "0.5rem",
+            textJustify: "right",
+            width: "70%",
+          }}
+        >
+          {`lrwxr-xr-x 1 chacker admin ${item.node.frontmatter.added} ${item.node.frontmatter.slug} -> `}
+          <a href={item.node.frontmatter.popupGithubLink}>
+            {item.node.frontmatter.popupGithubLink}
+          </a>
+        </span>
+      </li>
+    ))
 
-  const resourcesMobile = data.resources.edges.map(item => (
-    <li
-      key={item.node.frontmatter.title}
-      className={item.node.frontmatter.nameOfClass}
-    >
-      <Link
-        className="popupWindowLinkButton"
-        style={{ cursor: "pointer" }}
-        to={item.node.frontmatter.slug}
+    resourcesMobile = data.resources.edges.map(item => (
+      <li
+        key={item.node.frontmatter.title}
+        className={item.node.frontmatter.nameOfClass}
       >
-        {item.node.frontmatter.listName}
-      </Link>
-    </li>
-  ))
+        <Link
+          className="popupWindowLinkButton"
+          style={{ cursor: "pointer" }}
+          to={item.node.frontmatter.slug}
+        >
+          {item.node.frontmatter.listName}
+        </Link>
+      </li>
+    ))
+  }
 
-  const judges = data.judges.edges.map(item => (
-    <li
-      key={item.node.frontmatter.title}
-      className={item.node.frontmatter.nameOfClass}
-      style={{ display: "flex", alignItems: "center", width: "100%" }}
-    >
-      <button
-        className="popupWindowLinkButton"
-        style={{ cursor: "pointer", width: "30%" }}
-        onClick={() => createWinboxInstance(item)}
+  let judges, judgesMobile;
+  if (showJudges) {
+    judges = data.judges.edges.map(item => (
+      <li
+        key={item.node.frontmatter.title}
+        className={item.node.frontmatter.nameOfClass}
+        style={{ display: "flex", alignItems: "center", width: "100%" }}
       >
-        {item.node.frontmatter.listName}
-      </button>
-      <span
-        style={{
-          fontSize: "x-small",
-          paddingLeft: "0.5rem",
-          textJustify: "right",
-          width: "70%",
-        }}
-      >
-        {`lrwxr-xr-x 1 chacker admin ${item.node.frontmatter.added} ${item.node.frontmatter.slug} -> `}
-        <a href={item.node.frontmatter.popupGithubLink}>
-          {item.node.frontmatter.popupGithubLink}
-        </a>
-      </span>
-    </li>
-  ))
+        <button
+          className="popupWindowLinkButton"
+          style={{ cursor: "pointer", width: "30%" }}
+          onClick={() => createWinboxInstance(item)}
+        >
+          {item.node.frontmatter.listName}
+        </button>
+        <span
+          style={{
+            fontSize: "x-small",
+            paddingLeft: "0.5rem",
+            textJustify: "right",
+            width: "70%",
+          }}
+        >
+          {`lrwxr-xr-x 1 chacker admin ${item.node.frontmatter.added} ${item.node.frontmatter.slug} -> `}
+          <a href={item.node.frontmatter.popupGithubLink}>
+            {item.node.frontmatter.popupGithubLink}
+          </a>
+        </span>
+      </li>
+    ))
 
-  const judgesMobile = data.judges.edges.map(item => (
-    <li
-      key={item.node.frontmatter.title}
-      className={item.node.frontmatter.nameOfClass}
-    >
-      <Link
-        className="popupWindowLinkButton"
-        style={{ cursor: "pointer" }}
-        to={item.node.frontmatter.slug}
+    judgesMobile = data.judges.edges.map(item => (
+      <li
+        key={item.node.frontmatter.title}
+        className={item.node.frontmatter.nameOfClass}
       >
-        {item.node.frontmatter.listName}
-      </Link>
-    </li>
-  ))
+        <Link
+          className="popupWindowLinkButton"
+          style={{ cursor: "pointer" }}
+          to={item.node.frontmatter.slug}
+        >
+          {item.node.frontmatter.listName}
+        </Link>
+      </li>
+    ))
+  }
 
   const other = data.other.edges.map(item => (
     <li
@@ -326,15 +359,43 @@ export default function ItemsList() {
     </li>
   ))
 
+  let faq, faqMobile;
+  if (showFAQ) {
+    faq = data.faq.edges.map(item => (
+      <li
+        key={item.node.frontmatter.title.replace(" ", "_")}
+        className={item.node.frontmatter.nameOfClass}
+        style={{ display: "flex", alignItems: "center", width: "100%" }}
+      >
+        <button
+          className="popupWindowLinkButton"
+          style={{ cursor: "pointer", width: "100%" }}
+          onClick={() => createWinboxInstance(item)}
+        >
+          {item.node.frontmatter.listName}
+        </button>
+      </li>
+    ))
+
+    faqMobile = data.faq.edges.map(item => (
+      <li
+        key={item.node.frontmatter.title}
+        className={item.node.frontmatter.nameOfClass}
+      >
+      </li>
+    ))
+  }
+
   const mappedItems = () => {
     return (
       <>
-        <li>→ Tracks:</li>
-        {track}
-        <li>→ Resources:</li>
-        {resources}
-        <li>→ Judges:</li>
-        {judges}
+        {showTracks && (<li>→ Tracks:</li>)}
+        {showTracks && track}
+        {showResources && (<li>→ Resources:</li>)}
+        {showResources && resources}
+        {showJudges && (<li>→ Judges:</li>)}
+        {showJudges && judges}
+        {showFAQ && faq}
         <Konami>
           <li>→ What's This?:</li>
           {other}
@@ -353,6 +414,7 @@ export default function ItemsList() {
         {resourcesMobile}{" "}
         <li>→ Judges:</li>
         {judgesMobile}
+        {showFAQ && faqMobile}
         <Konami>
           <li>→ What's This?:</li>
           {otherMobile}

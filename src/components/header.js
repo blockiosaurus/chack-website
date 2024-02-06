@@ -53,8 +53,9 @@ const Header = ({ siteTitle }) => {
             />
           )}
         </h1>
-      </div>
-    </header>
+      </div >
+    </header >
+
   )
 }
 

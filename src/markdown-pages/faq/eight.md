@@ -1,0 +1,13 @@
+---
+slug: "resources/two"
+nameOfClass: "faq-items"
+title: "Where can I ask technical questions during the hackathon?"
+added: "2023-07-14"
+listName: "Where can I ask technical questions during the hackathon?"
+video: "false"
+popupImageSrc: ""
+popupImageAlt: ""
+techIcons: []
+---
+
+Participants are encouraged to visit the cHack channel within the [Metaplex discord](https://t.co/kmuwlPVz0S) for technical assistance. There will also be webinars throughout the month of February. Additionally, Metaplex will be sponsoring a compression-focused week at MtnDAO from February 12th-16th where there will be workshops and office hours for those hacking in-person.

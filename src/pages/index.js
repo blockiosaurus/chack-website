@@ -3,6 +3,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import LsDisplay from "../components/LsDisplay"
+import CatDisplay from "../components/CatDisplay"
 import Header from "../components/header"
 
 const IndexPage = () => (
@@ -11,7 +12,13 @@ const IndexPage = () => (
     <Layout>
       <Header />
       <div className="container">
-        <LsDisplay text="~ $ls -l" delay="natural"></LsDisplay>
+        <CatDisplay text="~ $cat README" delay="natural"></CatDisplay>
+      </div>
+      <div className="container">
+        <LsDisplay showTracks={true} showResources={true} showJudges={true} text="~ $ls -al ./Overview" delay="natural"></LsDisplay>
+      </div>
+      <div className="container">
+        <LsDisplay showFAQ={true} text="~ $cat ./FAQ.txt" delay="natural"></LsDisplay>
       </div>
     </Layout>
   </>
