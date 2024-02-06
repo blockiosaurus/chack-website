@@ -83,6 +83,29 @@ export default function ItemsList() {
           }
         }
       }
+      judges: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "//judges/[^/]+$/" } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              listName
+              nameOfClass
+              popupGithubLink
+              popupImageAlt
+              popupImageSrc
+              popupLiveLink
+              techIcons
+              title
+              slug
+              video
+              added
+            }
+            html
+            fileAbsolutePath
+          }
+        }
+      }
       other: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "//other/[^/]+$/" } }
       ) {
@@ -215,6 +238,50 @@ export default function ItemsList() {
     </li>
   ))
 
+  const judges = data.judges.edges.map(item => (
+    <li
+      key={item.node.frontmatter.title}
+      className={item.node.frontmatter.nameOfClass}
+      style={{ display: "flex", alignItems: "center", width: "100%" }}
+    >
+      <button
+        className="popupWindowLinkButton"
+        style={{ cursor: "pointer", width: "30%" }}
+        onClick={() => createWinboxInstance(item)}
+      >
+        {item.node.frontmatter.listName}
+      </button>
+      <span
+        style={{
+          fontSize: "x-small",
+          paddingLeft: "0.5rem",
+          textJustify: "right",
+          width: "70%",
+        }}
+      >
+        {`lrwxr-xr-x 1 chacker admin ${item.node.frontmatter.added} ${item.node.frontmatter.slug} -> `}
+        <a href={item.node.frontmatter.popupGithubLink}>
+          {item.node.frontmatter.popupGithubLink}
+        </a>
+      </span>
+    </li>
+  ))
+
+  const judgesMobile = data.judges.edges.map(item => (
+    <li
+      key={item.node.frontmatter.title}
+      className={item.node.frontmatter.nameOfClass}
+    >
+      <Link
+        className="popupWindowLinkButton"
+        style={{ cursor: "pointer" }}
+        to={item.node.frontmatter.slug}
+      >
+        {item.node.frontmatter.listName}
+      </Link>
+    </li>
+  ))
+
   const other = data.other.edges.map(item => (
     <li
       key={item.node.frontmatter.title}
@@ -262,8 +329,12 @@ export default function ItemsList() {
   const mappedItems = () => {
     return (
       <>
-        <li>→ Tracks:</li> {track} <li>→ Resources:</li>
+        <li>→ Tracks:</li>
+        {track}
+        <li>→ Resources:</li>
         {resources}
+        <li>→ Judges:</li>
+        {judges}
         <Konami>
           <li>→ What's This?:</li>
           {other}
@@ -279,7 +350,9 @@ export default function ItemsList() {
         <li className="trackItem">
         </li>{" "}
         <li>→ Resources:</li>
-        {resourcesMobile}
+        {resourcesMobile}{" "}
+        <li>→ Judges:</li>
+        {judgesMobile}
         <Konami>
           <li>→ What's This?:</li>
           {otherMobile}
