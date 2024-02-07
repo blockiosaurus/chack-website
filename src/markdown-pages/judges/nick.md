@@ -13,5 +13,7 @@ techIcons: []
 ---
 
 Host of the Solfate Podcast
+
 Developer Relations at SolanaFoundation
+
 Judging the Dev Tools Track

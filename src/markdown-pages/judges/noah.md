@@ -13,4 +13,5 @@ techIcons: []
 ---
 
 Head of Protocol Engineering at Helium Foundation
+
 Judging the Dev Tools Track
