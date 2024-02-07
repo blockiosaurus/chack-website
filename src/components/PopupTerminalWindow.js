@@ -1,5 +1,5 @@
 import React from "react"
-import Typewriter from "typewriter-effect"
+// import Typewriter from "typewriter-effect"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faLink } from "@fortawesome/free-solid-svg-icons"
@@ -35,7 +35,7 @@ export default function PopupTerminalWindow({
         style={{ backgroundImage: `url(${popupImageSrc})` }}
       >
         <h1 className="popupTerminaWindowHeader">
-          <Typewriter
+          {/* <Typewriter
             onInit={typewriter => {
               typewriter
                 .typeString(`${title}`)
@@ -44,7 +44,8 @@ export default function PopupTerminalWindow({
                   state.elements.cursor.style.display = "none"
                 })
             }}
-          />
+          /> */}
+          {title}
         </h1>
         {video === "false" ? (
           <div className="popupTerminalWindowImageContainer">

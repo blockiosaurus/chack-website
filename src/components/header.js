@@ -13,12 +13,15 @@ const Header = ({ siteTitle }) => {
 
   return (
     <header>
-      <div style={{ display: "inline-flex" }}>
-        <h1>{">"}</h1>
-        <h1>
-          {isLoaded ? (
-            "Metaplex cHack"
-          ) : (
+      <div>
+        <div style={{ display: "flex" }}>
+          <h1>{">"}</h1>
+          <h1>
+            Metaplex cHack
+          </h1>
+        </div>
+        <div style={{ display: "flex" }}>
+          <h2>
             <Typewriter
               style={{ marginTop: 0, paddingTop: 0 }}
               options={{
@@ -26,34 +29,13 @@ const Header = ({ siteTitle }) => {
               }}
               onInit={typewriter => {
                 typewriter
-                  .typeString("Dev Tools")
-                  .pauseFor(2500)
-                  .deleteAll()
-                  .typeString("Social")
-                  .pauseFor(2500)
-                  .deleteAll()
-                  .typeString("Mobile")
-                  .pauseFor(2500)
-                  .deleteAll()
-                  .typeString("Gaming")
-                  .pauseFor(2500)
-                  .deleteAll()
-                  .typeString("RWAs")
-                  .pauseFor(2500)
-                  .deleteAll()
-                  .typeString("DePIN")
-                  .pauseFor(2500)
-                  .deleteAll()
-                  .typeString("Compression")
-                  .callFunction(() => {
-                    setIsLoaded(true)
-                  })
+                  .typeString("February 1st - 29th")
                   .start()
               }}
             />
-          )}
-        </h1>
-      </div >
+          </h2>
+        </div >
+      </div>
     </header >
 
   )

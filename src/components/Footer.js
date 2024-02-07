@@ -58,6 +58,13 @@ const Footer = () => {
         >
           GitHub
         </a>
+        <a
+          href="https://docs.google.com/document/d/1eSI4hqKZeAk7HGIgUNK7AGzA1HywSgQO/edit?usp=sharing&ouid=105918931425761106702&rtpof=true&sd=true"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {" | "} Terms and Conditions
+        </a>
       </div>
       <span
         style={{

@@ -10,7 +10,7 @@ const LsDisplay = ({ text, showTracks, showResources, showJudges, showFAQ }) => 
   return (
     <div className="LsDisplayWindow">
       <div className="LsDisplayTaskbar">
-        <span>CMD</span>
+        {/* <span>CMD</span> */}
         {/* <div style={{ position: "absolute", right: "10px", bottom: "-2px" }}>
           <DarkModeToggle />
         </div> */}
