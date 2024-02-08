@@ -2,8 +2,8 @@ import React from "react"
 import ReactDOM from "react-dom"
 //importing winbox https://github.com/nextapps-de/winbox/issues/1
 import WinBox from "winbox/src/js/winbox"
+import Contact from "./Contact"
 import { Link } from "gatsby"
-import ToC from "./ToC"
 
 const checkScreenWidthMobile = () => {
   if (typeof window !== `undefined`) {
@@ -17,7 +17,7 @@ const desktopButton = (
     style={{ cursor: "pointer" }}
     onClick={() => {
       const win = new WinBox({
-        title: "Terms and Conditions",
+        title: "Contact me",
         width: "80%",
         height: "80%",
         x: "center",
@@ -33,14 +33,14 @@ const desktopButton = (
       })
 
       ReactDOM.render(
-        React.createElement(ToC, {
+        React.createElement(Contact, {
           close: () => win.close(),
         }),
         win.body
       )
     }}
   >
-    Terms and Conditions
+    Contact
   </button>
 )
 
@@ -58,12 +58,13 @@ const Footer = () => {
         >
           GitHub
         </a>
-        {" | "}
-        {checkScreenWidthMobile() ? (
-          <Link to="/toc">Terms and Conditions</Link>
-        ) : (
-          desktopButton
-        )}
+        <a
+          href="https://docs.google.com/document/d/1eSI4hqKZeAk7HGIgUNK7AGzA1HywSgQO/edit?usp=sharing&ouid=105918931425761106702&rtpof=true&sd=true"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {" | "} Terms and Conditions
+        </a>
       </div>
       <span
         style={{

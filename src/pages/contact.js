@@ -1,12 +1,12 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import ToC from "../components/ToC"
+import Contact from "../components/Contact"
 
 const NotFoundPage = () => (
   <Layout>
     <Seo title="Contact" />
-    <ToC></ToC>
+    <Contact></Contact>
   </Layout>
 )
 
