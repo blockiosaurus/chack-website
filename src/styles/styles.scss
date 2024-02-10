@@ -12,11 +12,14 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding-top: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
   min-height: 100vh;
   /* screen glow */
   background-image: radial-gradient(
-    #00664c, black 120%
+    #131313, black 120%
   );
   width: 100%;
 }

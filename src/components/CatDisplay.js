@@ -20,16 +20,9 @@ const CatDisplay = ({ text }) => {
         {isBrowser && window.innerWidth > 1024 ? "" : ""}
         <div className="break"></div>
       </h2>
-      <div>
-        {"A compression focused hackathon for developers building the future of Solana NFTs and NFT tooling."}
-      </div>
-      <div>
-        <b>{"Prize Pool: "}</b>
-        {"1,000,000 $MPLX Tokens"}
-      </div>
-      <div>
-        {"All $MPLX prizes will be subject to a 1-year lockup period from the date winners are announced."}
-      </div>
+      <p>
+        {"A compression-focused hackathon for developers building the future of Solana NFTs and NFT tooling with 1 million $MPLX up for grabs."}
+      </p>
       <div>
         <b>{"First Place – "}</b>
         {"250,000 $MPLX"}
@@ -42,11 +35,11 @@ const CatDisplay = ({ text }) => {
         <b>{"Third Place – "}</b>
         {"50,000 $MPLX"}
       </div>
+      <p>
+        {"All $MPLX prizes will be subject to a 1-year lockup period from the date winners are announced. To be eligible for a Prize, entrants must comply with the cHack Terms and Conditions, which includes successfully passing KYC."}
+      </p>
       <div>
-        {"Each cHack track will have one winner that will be awarded 100,000 $MPLX."}
-      </div>
-      <div>
-        {"To be eligible for a Prize, entrants must comply with the cHack Terms and Conditions, which includes successfully passing KYC."}
+        {""}
       </div>
     </div>
   )
