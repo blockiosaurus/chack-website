@@ -4,7 +4,7 @@ import "../styles/winbox.scss"
 import "../styles/mainTerminalWindow.scss"
 // import DarkModeToggle from "./DarkModeToggle"
 
-const CatDisplay = ({ text }) => {
+const CatDisclaimer = ({ text }) => {
   const isBrowser = typeof window !== "undefined"
 
   return (
@@ -21,20 +21,8 @@ const CatDisplay = ({ text }) => {
         <div className="break"></div>
       </h2>
       <p>
-        {"A compression-focused hackathon for developers building the future of Solana NFTs and NFT tooling with 1 million $MPLX up for grabs."}
+        {"All $MPLX prizes will be subject to a 1-year lockup period from the date winners are announced. To be eligible for a Prize, entrants must comply with the cHack Terms and Conditions, which includes successfully passing KYC."}
       </p>
-      <div>
-        <b>{"First Place – "}</b>
-        {"250,000 $MPLX"}
-      </div>
-      <div>
-        <b>{"Second Place – "}</b>
-        {"100,000 $MPLX"}
-      </div>
-      <div>
-        <b>{"Third Place – "}</b>
-        {"50,000 $MPLX"}
-      </div>
       <div>
         {""}
       </div>
@@ -42,4 +30,4 @@ const CatDisplay = ({ text }) => {
   )
 }
 
-export default CatDisplay
+export default CatDisclaimer

@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import LsDisplay from "../components/LsDisplay"
 import CatDisplay from "../components/CatDisplay"
+import CatDisclaimer from "../components/CatDisclaimer"
 import Header from "../components/header"
 
 const IndexPage = () => (
@@ -25,6 +26,9 @@ const IndexPage = () => (
       </div>
       <div className="container">
         <LsDisplay showFAQ={true} text="~ $cat ./FAQ.txt" delay="natural"></LsDisplay>
+      </div>
+      <div className="container">
+        <CatDisclaimer text="~ $cat DISCLAIMER.md" delay="natural"></CatDisclaimer>
       </div>
     </Layout>
   </>
