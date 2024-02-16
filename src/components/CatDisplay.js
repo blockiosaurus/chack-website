@@ -38,6 +38,9 @@ const CatDisplay = ({ text }) => {
       <div>
         {""}
       </div>
+      <div>
+        <b>{"Individual Tracks - "}</b> 100,000 $MPLX each
+      </div>
     </div>
   )
 }
