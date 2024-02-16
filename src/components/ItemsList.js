@@ -407,13 +407,12 @@ export default function ItemsList({ showTracks, showResources, showJudges, showF
   const mappedItemsMobile = () => {
     return (
       <>
-        <li>→ Tracks:</li> {trackMobile}{" "}
-        <li className="trackItem">
-        </li>{" "}
-        <li>→ Resources:</li>
-        {resourcesMobile}{" "}
-        <li>→ Judges:</li>
-        {judgesMobile}
+        {showTracks && (<li>→ Tracks:</li>)}
+        {showTracks && trackMobile}
+        {showResources && (<li>→ Resources:</li>)}
+        {showResources && resourcesMobile}
+        {showJudges && (<li>→ Judges:</li>)}
+        {showJudges && judgesMobile}
         {showFAQ && faqMobile}
         <Konami>
           <li>→ What's This?:</li>
