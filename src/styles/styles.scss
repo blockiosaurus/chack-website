@@ -247,3 +247,24 @@ footer > a:hover {
 .react-toggle--checked .react-toggle-track {
   background-color: var(--windowBg) !important;
 }
+
+.floating-button {
+  position: fixed;
+  top: 100px;
+  right: 100px;
+  z-index: 100; /* Ensure it sits above other content */
+  background-color: #00FFBD; /* Example background color */
+  color: black; /* Text color */
+  border: none;
+  border-radius: 10%;
+  font-weight:bold;
+  font-size: larger;
+  // width: 56px; /* Button size */
+  // height: 56px; /* Button size */
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: add some shadow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

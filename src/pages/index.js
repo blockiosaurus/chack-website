@@ -6,6 +6,7 @@ import LsDisplay from "../components/LsDisplay"
 import CatDisplay from "../components/CatDisplay"
 import CatDisclaimer from "../components/CatDisclaimer"
 import Header from "../components/header"
+import FloatingButton from "../components/FloatingButton"
 
 const IndexPage = () => (
   <>
@@ -31,6 +32,7 @@ const IndexPage = () => (
         <CatDisclaimer text="~ $cat DISCLAIMER.md" delay="natural"></CatDisclaimer>
       </div>
     </Layout>
+    <FloatingButton text={"Sign Up"} link={"https://docs.google.com/forms/d/e/1FAIpQLSdZYLzp10iAO7CpWte9rc8cYH5T2LZnMk0R0sHx2IsgwqPNzQ/viewform?pli=1"} />
   </>
 )
 
