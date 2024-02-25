@@ -24,6 +24,9 @@ const CatDisplay = ({ text }) => {
         {"A compression-focused hackathon for developers building the future of Solana NFTs and NFT tooling with 1 million $MPLX up for grabs."}
       </p>
       <div>
+        <b style={{ fontSize: "24px" }}>{"Grand Prizes "}</b>
+      </div>
+      <div>
         <b>{"First Place – "}</b>
         {"250,000 $MPLX"}
       </div>
@@ -35,11 +38,11 @@ const CatDisplay = ({ text }) => {
         <b>{"Third Place – "}</b>
         {"50,000 $MPLX"}
       </div>
-      <div>
-        {""}
+      <div style={{ paddingTop: "20px" }}>
+        <b style={{ fontSize: "24px" }}>{"Individual Tracks "}</b>
       </div>
       <div>
-        <b>{"Individual Tracks - "}</b> 100,000 $MPLX each
+        100,000 $MPLX per track
       </div>
     </div>
   )

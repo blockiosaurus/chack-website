@@ -32,7 +32,8 @@ const IndexPage = () => (
         <CatDisclaimer text="~ $cat DISCLAIMER.md" delay="natural"></CatDisclaimer>
       </div>
     </Layout>
-    <FloatingButton text={"Sign Up"} link={"https://docs.google.com/forms/d/e/1FAIpQLSdZYLzp10iAO7CpWte9rc8cYH5T2LZnMk0R0sHx2IsgwqPNzQ/viewform?pli=1"} />
+    <FloatingButton style={{ top: "75px", right: "75px", width: "135px" }} text={"Sign Up"} link={"https://docs.google.com/forms/d/e/1FAIpQLSdZYLzp10iAO7CpWte9rc8cYH5T2LZnMk0R0sHx2IsgwqPNzQ/viewform?pli=1"} />
+    <FloatingButton style={{ top: "150px", right: "75px", width: "135px" }} text={"Submit"} link={"https://forms.gle/xgsfWttB3anwjrtV8"} />
   </>
 )
 
